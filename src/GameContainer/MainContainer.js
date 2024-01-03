@@ -33,13 +33,13 @@ const color = {
 
 
 const MainContainer = () => {
-    const [currentGif , setCurrentGif] = useState(Gifs['A'].gif);
+    const [currentGif , setCurrentGif] = useState(null);
 
-    const playSoundForAlphabet = (sound) => {
-        const audio = new Audio();
-        audio.src = `data:audio/wav;base64,${sound}`;
-        audio.play();
-      };
+    // const playSoundForAlphabet = (sound) => {
+    //     const audio = new Audio();
+    //     audio.src = `data:audio/wav;base64,${sound}`;
+    //     audio.play();
+    //   };
 
     const handleClick = (alphabet)=>{
 
