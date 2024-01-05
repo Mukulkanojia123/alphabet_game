@@ -1,0 +1,20 @@
+  ----------------ALPHABET GAME------------------------------
+
+  HOSTED LINK :- https://mukulalphabet1.netlify.app/
+
+
+The Alphabet Game is a simple and interactive React application that engages users in 
+learning the alphabet through visual and auditory stimuli. Users can click on alphabet buttons 
+to change the associated GIF image, accompanied by a voice prompt describing the displayed image.
+The Alphabet Game is a simple and interactive React application that engages users in learning the alphabet
+through visual and auditory stimuli. Users can click on alphabet buttons to change the associated GIF image, 
+accompanied by a voice prompt describing the displayed image.
+
+
+  Features
+# Interactive Buttons: Click on alphabet buttons to change the associated GIF image dynamically.
+# Voice Guidance: A voice prompt accompanies each image change, providing an auditory learning experience
+
+#  GIF Images: Replace the default GIF images with your own set to cater to specific themes or preferences.
+#  Voice: Adjust the voice prompt content or even swap out the voice synthesis library to personalize the 
+  auditory experience.
