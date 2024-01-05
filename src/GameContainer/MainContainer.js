@@ -10,14 +10,14 @@ import home from '../Assets/home.gif';
 
 
 const Gifs = {
-    A: { gif: appleGif, sound: 'This is A' },
-    B: { gif: bee, sound: 'This is B' },
-    C: {gif : coin, sound : 'this is C'},
-    D: {gif : duck, sound : 'this is D'},
-    E: {gif : eye, sound : 'this is E'},
-    F: {gif : foodtruck, sound : 'this is F'},
-    G: {gif : gift, sound : 'this is G'},
-    H: {gif : home, sound : 'this is H'}
+    A: { gif: appleGif, sound: 'Apple This is Apple' },
+    B: { gif: bee, sound: 'Bee This is Bee' },
+    C: {gif : coin, sound : 'Coin this is Coin'},
+    D: {gif : duck, sound : 'Duck this is Duck'},
+    E: {gif : eye, sound : 'Eye this is Eye'},
+    F: {gif : foodtruck, sound : ' Food truck this is Food truck'},
+    G: {gif : gift, sound : 'Gift this is Gift'},
+    H: {gif : home, sound : 'Home this is Home'}
 }
 
 const color = {
@@ -27,25 +27,26 @@ const color = {
     D : 'yellow',
     E : 'orange',
     F : 'purple',
-    G : 'pink',
-    H : 'voilet',
+    G : '#E207C8',
+    H : '#0C343D',
 }
 
 
 const MainContainer = () => {
     const [currentGif , setCurrentGif] = useState(null);
 
-    // const playSoundForAlphabet = (sound) => {
-    //     const audio = new Audio();
-    //     audio.src = `data:audio/wav;base64,${sound}`;
-    //     audio.play();
-    //   };
+    const playSoundForAlphabet = (sound) => {
+        let value = new SpeechSynthesisUtterance(sound);
+        window.speechSynthesis.speak(value);
+        // console.log(value);
+      };
 
     const handleClick = (alphabet)=>{
 
             setCurrentGif(Gifs[alphabet].gif);
 
-            // playSoundForAlphabet(Gifs[alphabet].sound);
+             playSoundForAlphabet(Gifs[alphabet].sound)
+            //  console.log(Gifs[alphabet].sound)
     }
   return (
     <div className='game_container'>
@@ -54,8 +55,8 @@ const MainContainer = () => {
         </div> 
         <div className='key_pad'>
             {
-                ['A','B','C','D','E','F','G','H'].map((alpha)=>(
-                    <button onClick={()=>handleClick(alpha)} style={{color:color[alpha] , border:`4px solid ${color[alpha]}`}}>{alpha}</button>
+                ['A','B','C','D','E','F','G','H'].map((alpha,index)=>(
+                    <button key={index} onClick={()=>handleClick(alpha)} style={{color:color[alpha] , border:`4px solid ${color[alpha]}`}}>{alpha}</button>
                 ))
             }      
         
